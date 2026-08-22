@@ -1,0 +1,105 @@
+import { Locale } from "./types";
+
+// قاموس النصوص الثابتة في الواجهة (Chrome/UI strings).
+// نصوص المحتوى (اسم المنتج، العروض...) تأتي من الـSettings/Products نفسها كـ LocalizedText.
+
+export const dict = {
+  ar: {
+    home: "الرئيسية",
+    caps: "القبعات",
+    trending: "الترندات",
+    designYours: "صمّم قبعتك",
+    offers: "العروض",
+    contact: "تواصل معنا",
+    browseCaps: "تصفح القبعات",
+    designYoursBtn: "صمّم قبعتك",
+    featured: "قبعات مختارة",
+    trendingNow: "🔥 الأكثر طلبًا",
+    viewProduct: "مشاهدة",
+    orderNow: "اطلب الآن",
+    price: "السعر",
+    color: "اللون",
+    quantity: "الكمية",
+    notes: "ملاحظات (اختياري)",
+    customerName: "الاسم الكامل",
+    phone: "رقم الهاتف",
+    city: "المدينة",
+    address: "العنوان",
+    orderViaWhatsapp: "اطلب عبر WhatsApp",
+    submitOrder: "إرسال الطلب",
+    orderSaved: "تم تسجيل طلبك، سيتم فتح واتساب الآن لإكمال التواصل.",
+    customDesignTitle: "صمّم قبعتك الخاصة",
+    customDesignDesc:
+      "اختر لون القبعة، ارفع تصميمك أو صورتك، واكتب وصفًا لما تريده — نتولى الباقي.",
+    chooseColor: "اختر لون القبعة",
+    uploadDesign: "ارفع صورة أو تصميم",
+    uploadHint: "JPG, PNG, WEBP, PDF, SVG — حتى 8MB",
+    designDescription: "صف الفكرة التي تريدها",
+    cashOnDelivery: "الدفع عند الاستلام",
+    deliveryAllLibya: "التوصيل لجميع أنحاء ليبيا",
+    footerRights: "جميع الحقوق محفوظة",
+    admin: "لوحة التحكم",
+    seeAll: "مشاهدة الكل",
+    close: "إغلاق",
+    save: "حفظ",
+    cancel: "إلغاء",
+    edit: "تعديل",
+    delete: "حذف",
+    add: "إضافة",
+    required: "هذا الحقل مطلوب",
+    outOfStock: "غير متوفر حاليًا",
+    newDrop: "وصل حديثًا"
+  },
+  en: {
+    home: "Home",
+    caps: "Caps",
+    trending: "Trending",
+    designYours: "Design Yours",
+    offers: "Offers",
+    contact: "Contact",
+    browseCaps: "Browse Caps",
+    designYoursBtn: "Design Yours",
+    featured: "Featured Caps",
+    trendingNow: "🔥 Trending Now",
+    viewProduct: "View",
+    orderNow: "Order Now",
+    price: "Price",
+    color: "Color",
+    quantity: "Quantity",
+    notes: "Notes (optional)",
+    customerName: "Full Name",
+    phone: "Phone Number",
+    city: "City",
+    address: "Address",
+    orderViaWhatsapp: "Order via WhatsApp",
+    submitOrder: "Submit Order",
+    orderSaved: "Your order was saved. Opening WhatsApp to complete it.",
+    customDesignTitle: "Design Your Own Cap",
+    customDesignDesc:
+      "Pick a cap color, upload your artwork or photo, and describe what you want — we'll handle the rest.",
+    chooseColor: "Choose cap color",
+    uploadDesign: "Upload your design or photo",
+    uploadHint: "JPG, PNG, WEBP, PDF, SVG — up to 8MB",
+    designDescription: "Describe what you want",
+    cashOnDelivery: "Cash on Delivery",
+    deliveryAllLibya: "Delivery across Libya",
+    footerRights: "All rights reserved",
+    admin: "Admin",
+    seeAll: "See all",
+    close: "Close",
+    save: "Save",
+    cancel: "Cancel",
+    edit: "Edit",
+    delete: "Delete",
+    add: "Add",
+    required: "This field is required",
+    outOfStock: "Currently unavailable",
+    newDrop: "New Drop"
+  }
+} as const;
+
+export type DictKey = keyof typeof dict["ar"];
+
+export function t(locale: Locale, key: DictKey): string {
+  return dict[locale][key];
+}

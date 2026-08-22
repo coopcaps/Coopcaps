@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Archivo Black", "Tahoma", sans-serif;
+  --font-body: "Inter", "Tahoma", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme("colors.brand.paper");
+  color: theme("colors.brand.ink");
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dark body {
+  background-color: theme("colors.brand.ink");
+  color: theme("colors.brand.paper");
+}
+
+/* شارة الوسم المائلة — العنصر البصري المميز للهوية (مستوحى من "تاق" القبعات الحقيقي) */
+.cap-tag {
+  position: absolute;
+  top: 14px;
+  inset-inline-start: -8px;
+  transform: rotate(-8deg);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 3px 12px;
+  background: theme("colors.brand.yellow");
+  color: theme("colors.brand.ink");
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.price-tag {
+  font-family: var(--font-mono);
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid theme("colors.brand.yellow");
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
